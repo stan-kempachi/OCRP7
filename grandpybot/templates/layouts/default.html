@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <title>{% block title%}GrandPyBot by Stan{% endblock %}</title>
 
-    <link href="https://img.icons8.com/color/48/000000/joe-pineapples.png"
-      rel="icon"
-      type="image/png">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel="stylesheet" type="text/css">
-    <link href="{{ url_for('static', filename='css/app.css') }}" rel="stylesheet">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="icon"
+      type="image/png"
+      href="https://img.icons8.com/color/48/000000/joe-pineapples.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="/">
 {#    <!-- Bootstrap -->#}
 {#    <link href="/static/css/bootstrap.css.map" rel="stylesheet">#}

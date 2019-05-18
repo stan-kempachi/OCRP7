@@ -1,0 +1,6 @@
+env/
+.idea/
+database/
+__pycache__/
+tests/
+Pr�sentationP7.odp

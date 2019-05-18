@@ -26,8 +26,8 @@ def test_http_return(monkeypatch):
 
     def mockreturn(request):
         script.request = request
-        return BytesIO(json.dumps(results).encode())
         monkeypatch.setattr(urllib.request, 'urlopen', mockreturn)
         script.type_search = 'place description'
         script.information = 'OpenClassrooms  '
         assert script.get_user_request() == results
+        return BytesIO(json.dumps(results).encode())

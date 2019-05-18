@@ -33,12 +33,10 @@ function display_error(type_error) {
 
 
 $(function() {
-
     $('#boutenvoyer').click(function() {
         $('#alert').css( "display", "none" );
         var msg = '<br>' + '<msg>' + "&nbsp;Vous → " + $('#msg_id').val() + '</msg>' + '<br>';
         var request = $('input');
-
         if($('#input_form').val() != ''){
             $('#tchat').append(  msg);
             $('#contain_loader').css( "display", "block" );
@@ -81,13 +79,5 @@ $(function() {
                 }
             });
         }
-    });
-    $('#msg_id').keypress(function(e) {
-    var key = e.which;
-    if (key == 13) // the enter key code
-    {
-      $('#boutenvoyer').click();
-      return false;
-    }
     });
 });
