@@ -1,13 +1,13 @@
 #! /usr/bin/env python
 
-import random
-from datetime import datetime
-
 from flask import Flask, render_template, request, json
-
-import config as conf
+from datetime import datetime
 from grandpybot.utils import *
+import config as conf
+import random
 from grandpybot.vocabulary import *
+
+
 
 app = Flask(__name__)
 

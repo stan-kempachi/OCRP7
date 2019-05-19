@@ -1,11 +1,9 @@
 #! /usr/bin/env python
 """File containing function utilised by the app"""
-import gmaps
+from gmaps import Geocoding
 import wikipedia
-from geopy.geocoders import Nominatim
-
-from config import *
 from grandpybot.vocabulary import *
+from config import *
 
 
 def geo(search):
@@ -14,21 +12,19 @@ def geo(search):
     :param search:
     :return: dict_location
     """
-    gmaps.configure(api_key=MAP_API_KEY)
+    gmaps = Geocoding(api_key=MAP_API_KEY)
     try:
-        geolocator = Nominatim(user_agent="app.py")
-        location = geolocator.geocode(search)
-        location_raw = location.raw
+        geocode_result = gmaps.geocode(search, language='fr')[0]
         dict_location = {}
-        for key, item in location_raw.items():
-            if key == 'display_name':
+        for libelle, item in geocode_result.items():
+            if libelle == 'formatted_address':
                 dict_location['adresse'] = item
-            elif key == 'lat':
-                dict_location['latitude'] = item
-            elif key == 'lon':
-                dict_location['longitude'] = item
-            elif key == 'type':
-                dict_location['types'] = item
+            elif libelle == 'geometry':
+                dict_location['latitude'] = item['location']['lat']
+                dict_location['longitude'] = item['location']['lng']
+            elif libelle == 'types':
+                dict_location['types'] = '/'.join(item)
+
         return dict_location
     except:
         return False

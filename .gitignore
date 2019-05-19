@@ -1,6 +1,8 @@
-env/
+﻿env/
 .idea/
 database/
 __pycache__/
 tests/
-Pr�sentationP7.odp
+PresentationP7.odp
+.pytest_cache/
+.gitignore
