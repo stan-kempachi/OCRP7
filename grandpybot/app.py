@@ -1,13 +1,14 @@
 #! /usr/bin/env python
 
-from flask import Flask, render_template, request, json
-from datetime import datetime
-from grandpybot.utils import *
-import config as conf
 import random
+from datetime import datetime
+
+from flask import Flask, render_template, request, json
+
+import config as conf
+from grandpybot.utils import *
 from grandpybot.vocabulary import *
-
-
+from grandpybot.wiki_classe import Wikipedia
 
 app = Flask(__name__)
 
@@ -36,9 +37,9 @@ def get_user_request():
         information_extracted = extract_information_request(request_user)
         type_search = information_extracted['type_search']
         information = information_extracted['information']
-        wiki_url = get_wiki_url(information)
+        wiki_url = Wikipedia.get_wiki_url(information)
         emplacement = geo(information)
-        description = get_description_wiki(information)
+        description = Wikipedia.get_description_wiki(information)
         error = get_if_error(type_search)
         if type_search == 'error':
             dict_information = {'type_search': 'error'}

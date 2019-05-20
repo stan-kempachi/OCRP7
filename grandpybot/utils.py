@@ -1,14 +1,15 @@
 #! /usr/bin/env python
 """File containing function utilised by the app"""
 from gmaps import Geocoding
-import wikipedia
-from grandpybot.vocabulary import *
+
 from config import *
+from grandpybot.vocabulary import *
+from grandpybot.wiki_classe import Wikipedia
 
 
 def geo(search):
     """
-    Get a description from wikipedia.
+    Get a dict_location from gmaps.
     :param search:
     :return: dict_location
     """
@@ -24,45 +25,10 @@ def geo(search):
                 dict_location['longitude'] = item['location']['lng']
             elif libelle == 'types':
                 dict_location['types'] = '/'.join(item)
-
+        print(dict_location)
         return dict_location
     except:
         return False
-
-
-def get_wiki_url(search):
-    """
-    Get a description from wikipedia.
-    :param search:
-    :return: wiki_url
-    """
-    try:
-        wikipedia.set_lang("fr")
-        wiki_page = wikipedia.page(search)
-        wiki_url = wiki_page.url
-        return wiki_url
-    except:
-        return False
-
-
-def get_description_wiki(search):
-    """
-    Get a description from wikipedia.
-    :param search:
-    :return:description
-    """
-    try:
-        wikipedia.set_lang("fr")
-        srch = wikipedia.search(search, "html.parser")
-        data = wikipedia.page(srch, "html.parser").content
-        data = data.split('.')
-        description = ''
-        for sentance in data[:3]:
-            description = description + sentance
-        return description
-    except:
-        return False
-
 
 
 def extract_information_request(sentance):
@@ -100,7 +66,7 @@ def get_type_search(information):
     :return: type of search
     """
     emplacement = geo(information)
-    description = get_description_wiki(information)
+    description = Wikipedia.get_description_wiki(information)
 
     if not emplacement and description:
         return 'description'
