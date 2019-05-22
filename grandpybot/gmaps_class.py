@@ -6,8 +6,7 @@ from config import *
 
 
 class Gmaps:
-    """ Classe definissant l'appel a l'API Gmaps caractérisée par:
-    - le contenu du geocodage
+    """ Classe definissant  la méthode de l'appel a l'API Gmaps.
     """
     def __init__(self, gmaps):
         """constructor"""

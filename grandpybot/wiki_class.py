@@ -3,9 +3,10 @@
 import wikipedia
 
 class Wikipedia:
-    """ Classe definissant l'appel a l'API Wikipedia caractérisée par:
-    - contenu de page wikipédia
-    - lien de la page wikipédia
+    """
+    Class defining the call to the Wikipedia API characterized by:
+     - wikipedia page content
+     - link of the wikipedia page
     """
     def __init__(self):
         """constructor"""

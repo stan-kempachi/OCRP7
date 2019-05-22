@@ -46,12 +46,7 @@ def get_user_request():
             dict_information = {'type_search': 'error'}
         else:
             dict_information = {'wiki_url': wiki_url, 'emplacement': emplacement, 'description': description, 'type_search': type_search}
-
         dict_information.update({'sentance_place': random.choice(SENTANCE_PLACE_GRANDPY),
                                  'sentance_description': random.choice(SENTANCE_DESCRIPTION_GRANDPY)})
         dict_information.update(error)
         return json.dumps(dict_information)
-
-
-
-

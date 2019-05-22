@@ -7,7 +7,9 @@ from grandpybot.vocabulary import *
 
 
 class Parser ():
-    """ Classe definissant la methode du parser avant l'appel aux APIs """
+    """
+    Class defining the method of parser before appel aux APIs
+    """
     def __init__(self, sentance : str):
         self.sentance = sentance.replace('?', '')
         self.sentance = sentance.replace('.', '')
