@@ -8,9 +8,7 @@ class Wikipedia:
     - lien de la page wikipédia
     """
     def __init__(self):
-        """
-        constructor
-        """
+        """constructor"""
         wikipedia.set_lang("fr")
 
     def get_description_wiki(search):
