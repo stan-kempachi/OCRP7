@@ -2,7 +2,6 @@
 .idea/
 database/
 __pycache__/
-tests/
 PresentationP7.odp
 .pytest_cache/
 .gitignore
