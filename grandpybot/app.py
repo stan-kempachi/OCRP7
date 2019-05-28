@@ -35,12 +35,15 @@ def page_not_found(error):
 def get_user_request():
     if request.method == "GET":
         request_user = request.args.get('question')
-        information_extracted = Parser.extract_information_request(request_user)
+        parser = Parser(request_user)
+        information_extracted = parser.extract_information_request(request_user)
         type_search = information_extracted['type_search']
         information = information_extracted['information']
-        description = Wikipedia.get_description_wiki(information)
-        wiki_url = Wikipedia.get_wiki_url(information)
-        emplacement = Gmaps.geo(information)
+        wiki = Wikipedia()
+        description = wiki.get_description_wiki(information)
+        wiki_url = wiki.get_wiki_url(information)
+        gmaps = Gmaps()
+        emplacement = gmaps.geo(search=information)
         error = get_if_error(type_search)
         if type_search == 'error':
             dict_information = {'type_search': 'error'}

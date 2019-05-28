@@ -12,7 +12,7 @@ class Wikipedia:
         """constructor"""
         wikipedia.set_lang("fr")
 
-    def get_description_wiki(search):
+    def get_description_wiki(self, search):
         """
         Get a description from wikipedia.
         :param search:
@@ -29,14 +29,14 @@ class Wikipedia:
         except:
             return False
 
-    def get_wiki_url(search):
+
+    def get_wiki_url(self, search):
         """
         Get a description from wikipedia.
         :param search:
         :return: wiki_url
         """
         try:
-            wikipedia.set_lang("fr")
             wiki_page = wikipedia.page(search)
             wiki_url = wiki_page.url
             return wiki_url

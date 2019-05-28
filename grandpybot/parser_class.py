@@ -14,7 +14,7 @@ class Parser ():
         self.sentance = sentance.replace('?', '')
         self.sentance = sentance.replace('.', '')
 
-    def extract_information_request(sentance : str):
+    def extract_information_request(self, sentance : str):
         """
         Extract good information from search
         :param sentance:

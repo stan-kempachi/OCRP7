@@ -11,8 +11,10 @@ def get_type_search(information):
     :param information:
     :return: type of search
     """
-    emplacement = Gmaps.geo(information)
-    description = Wikipedia.get_description_wiki(information)
+    gmaps = Gmaps()
+    wiki = Wikipedia()
+    emplacement = gmaps.geo(information)
+    description = wiki.get_description_wiki(information)
 
     if not emplacement and description:
         return 'description'

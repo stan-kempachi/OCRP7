@@ -8,12 +8,10 @@ from config import *
 class Gmaps:
     """ Classe definissant  la méthode de l'appel a l'API Gmaps.
     """
-    def __init__(self, gmaps):
+    def __init__(self):
         """constructor"""
-        self.gmaps = gmaps(api_key=MAP_API_KEY)
 
-
-    def geo(search):
+    def geo(self, search):
         """
         Get a dict_location from gmaps.
         :param search:
