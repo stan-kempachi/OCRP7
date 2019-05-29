@@ -1,8 +1,12 @@
-import grandpybot.app as script
-import urllib.request
-import json
+#! /usr/bin/env python
+# -*-coding:Latin-1 -*
 
+import json
+import urllib.request
 from io import BytesIO
+
+from grandpybot import app as script
+
 
 def test_http_return(monkeypatch):
     results = [{
@@ -25,8 +29,8 @@ def test_http_return(monkeypatch):
 
     def mockreturn(request):
         script.request = request
-        return BytesIO(json.dumps(results).encode())
         monkeypatch.setattr(urllib.request, 'urlopen', mockreturn)
         script.type_search = 'place description'
         script.information = 'OpenClassrooms  '
         assert script.get_user_request() == results
+        return BytesIO(json.dumps(results).encode())
