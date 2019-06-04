@@ -30,13 +30,15 @@ def home():
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('errors/404.html'), 404
-
 @app.route('/get_user_request', methods=['GET'])
 def get_user_request():
     if request.method == "GET":
         request_user = request.args.get('question')
         parser = Parser(request_user)
         information_extracted = parser.extract_information_request(request_user)
+        information_extracted = parser.remove_punctuation(information_extracted)
+        information_extracted = parser.remove_word_please((information_extracted))
+        print(information_extracted)
         type_search = information_extracted['type_search']
         information = information_extracted['information']
         wiki = Wikipedia()
@@ -52,4 +54,4 @@ def get_user_request():
         dict_information.update({'sentance_place': random.choice(SENTANCE_PLACE_GRANDPY),
                                  'sentance_description': random.choice(SENTANCE_DESCRIPTION_GRANDPY)})
         dict_information.update(error)
-        return json.dumps(dict_information)
+        return json.dumps(dict_information, indent=2, sort_keys=True)

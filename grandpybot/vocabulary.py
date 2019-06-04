@@ -1,15 +1,3 @@
-KEYS_WORDS_ABOUT_EMPLACEMENT = [
-	'street_address',
-	'administrative_area_level_1',
-	'administrative_area_level_2',
-	'country',
-	'locality',
-	'street_address',
-	'archipelago',
-	'continent',
-	'premise'
-]
-
 WORD_ABOUT_EMPLACEMENT = [
 	'emplacement',
 	"l'emplacement",
@@ -42,20 +30,6 @@ WORD_ABOUT_WHAT = [
 	"d'"
 ]
 
-WORD_ABOUT_INFORMATION = [
-	"renseignement",
-	"renseignements",
-	"information",
-	"informations",
-	"histoire",
-	"savoir",
-	"renseigner",
-	"parler",
-	"raconter",
-	"documenter",
-	"approfondir",
-]
-
 WORD_PLEASE = [
 	's\'il te plait',
 	's\'il vous plait',
@@ -79,3 +53,4 @@ SENTANCE_PLACE_GRANDPY = [
 	"N'hésite pas à y faire un tour, il se situe ici : ",
 	"C'est un endroit très sympa! N'hésite pas à t'y rendre, c'est là : ",
 ]
+

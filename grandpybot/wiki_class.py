@@ -23,7 +23,7 @@ class Wikipedia:
             data = wikipedia.page(srch, "html.parser").content
             data = data.split('.')
             description = ''
-            for sentance in data[:3]:
+            for sentance in data[:1]:
                 description = description + sentance
             return description
         except:
@@ -32,7 +32,7 @@ class Wikipedia:
 
     def get_wiki_url(self, search):
         """
-        Get a description from wikipedia.
+        Get a url from wikipedia.
         :param search:
         :return: wiki_url
         """

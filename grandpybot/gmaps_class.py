@@ -6,7 +6,7 @@ from config import *
 
 
 class Gmaps:
-    """ Classe definissant  la méthode de l'appel a l'API Gmaps.
+    """ Class defining the method of calling the Gmaps API.
     """
     def __init__(self):
         """constructor"""
