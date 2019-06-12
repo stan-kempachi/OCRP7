@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title%}GrandPyBot by Stan{% endblock %}</title>
+
+    <link rel="icon"
+      type="image/png"
+      href="https://img.icons8.com/color/48/000000/joe-pineapples.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
+{#    <!-- Bootstrap -->#}
+{#    <link href="/static/css/bootstrap.css.map" rel="stylesheet">#}
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script src="/static/js/jquery.js"></script>
+  </head>
+
+  {% include 'layouts/partials/_nav.html' %}
+<body>
+    <div class="wrapper">
+        {% block body %}{% endblock %}
+    </div>
+</body>
+  {% include 'layouts/partials/_footer.html' %}
+</html>
+
