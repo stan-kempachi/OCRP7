@@ -4,7 +4,6 @@ import urllib.request
 from grandpybot.gmaps_class import Gmaps
 from grandpybot.utils import get_type_search
 from grandpybot.wiki_class import Wikipedia
-from grandpybot.app import get_user_request
 
 
 class Params:
@@ -33,7 +32,7 @@ class TestGetRequest:
         self.wiki_object = Wikipedia()
         self.type_search = get_type_search(self.search)
 
-        def mockreturn():
+        def mockreturn(self):
             """returns mock results"""
             return Params.results
         monkeypatch.setattr(urllib.request, 'urlopen', mockreturn)
@@ -42,5 +41,5 @@ class TestGetRequest:
         assert self.wiki_object.get_description_wiki(self.search) == Params.results['description']
         assert self.wiki_object.get_wiki_url(self.search) == Params.results['wiki_url']
         assert self.type_search == Params.results['type_search']
-        assert mockreturn() == Params.results
+        assert mockreturn(self) == Params.results
 
