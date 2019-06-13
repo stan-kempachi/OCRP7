@@ -4,7 +4,7 @@
     if exist run main from app
 """
 
-from grandpybot import App
+from grandpybot import APP
 
 if __name__ == "__main__":
-    App.run()
+    APP.run()

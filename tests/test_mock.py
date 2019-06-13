@@ -23,7 +23,7 @@ class Params:
 
 
 class TestGetRequest:
-    """initializes test class for the Media Wiki API with its attributes and methods"""
+    """initializes test class for the http request"""
 
     def test_search(self, monkeypatch):
         """tests media wiki search and asserts results"""
