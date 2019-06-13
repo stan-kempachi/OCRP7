@@ -17,10 +17,10 @@ class Params:
     search_2 = "le Sacré-Coeur"
     response_2 = {'adresse': '35 Rue du Chevalier de la Barre, 75018 Paris, France',
                   'latitude': 48.88670459999999, 'longitude': 2.3431043}
-    search_3 = " " \
-               "la cathédrale Notre Dame de Paris"
-    response_3 = {'adresse': '6 Parvis Notre-Dame - Pl. Jean-Paul II, 75004 Paris, France',
-                  'latitude': 48.85296820000001, 'longitude': 2.3499021}
+    search_3 = "l'arc de triomphe"
+    response_3 = {'adresse': 'Place Charles de Gaulle, 75008 Paris, France',
+                  'latitude': 48.8737917, 'longitude': 2.2950275}
+
     #wrong search:
     tintin_et_milou = "Tintin et Milou"
     bleach = "Zaraki Kenpachi"
