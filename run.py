@@ -1,5 +1,10 @@
 #! /usr/bin/env python
-from grandpybot import app
+
+"""
+    if exist run main from app
+"""
+
+from grandpybot import APP
 
 if __name__ == "__main__":
-    app.run(debug=True, port=3000)
+    APP.run(debug=True, port=3000)

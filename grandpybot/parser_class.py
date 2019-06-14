@@ -1,23 +1,25 @@
 #! /usr/bin/env python
 
+"""
+File containing the class parsing the user request
+"""
+
 import json
 import string
 
-from grandpybot.utils import *
-from grandpybot.vocabulary import *
+from grandpybot.utils import get_type_search
+from grandpybot.vocabulary import WORD_ABOUT_EMPLACEMENT, WORD_ABOUT_WHAT, WORD_PLEASE
 
 
-class Parser ():
+class Parser():
     """
     Class defining the method of parser before appel aux APIs
     """
-    def __init__(self, sentance : str):
+    def __init__(self, sentance: str):
         """constructor"""
         self.sentance = sentance
 
-
-
-    def extract_information_request(self, sentance : str):
+    def extract_information_request(self, sentance: str):
         """
         Extract good information from search
         :param sentance:
@@ -43,11 +45,17 @@ class Parser ():
         return information
 
     def remove_punctuation(self, information: str):
-        translator = str.maketrans(string.punctuation, ' ' * len(string.punctuation))  # punctuation to space
+        """
+        Extract et remove punctuation
+        """
+        translator = str.maketrans(string.punctuation, ' ' * len(string.punctuation))
         information = information.translate(translator)
         return information
 
-    def remove_word_please(self, information : str ):
+    def remove_word_please(self, information: str):
+        """
+        Extract et remove words please
+        """
         information = information.split(' ')
         dict_request = {}
         for elt in information:
