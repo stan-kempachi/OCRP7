@@ -1,0 +1,11 @@
+﻿env/
+.idea/
+database/
+__pycache__/
+PresentationP7.odp
+.pytest_cache/
+tests/htmlcov/
+tests/.coverage
+.coverage
+test/
+livrables/
