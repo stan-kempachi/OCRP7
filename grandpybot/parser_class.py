@@ -25,8 +25,8 @@ class Parser():
         :param sentance:
         :return: dict_request
         """
-        with open('grandpybot/stop_words.json') as json_data:
-            STOP_WORDS = json.load(json_data)
+        with open("grandpybot/stop_words.json") as json_data:
+            stop_words = json.load(json_data)
         list_words = sentance.split(' ')
         list_words_for_search = list_words
         for word in list_words:
@@ -36,7 +36,7 @@ class Parser():
             if word in WORD_ABOUT_EMPLACEMENT and WORD_ABOUT_WHAT:
                 list_words_for_search = list_words[list_words.index(word) + 1:]
                 break
-            if word in STOP_WORDS:
+            if word in stop_words:
                 list_words_for_search = list_words[list_words.remove(word):]
             else:
                 list_words_for_search = list_words
