@@ -1,8 +1,5 @@
 #! /usr/bin/env python
-
-"""
-File containing function utilised by the app
-"""
+"""File containing function utilised by the app"""
 
 from grandpybot.gmaps_class import Gmaps
 from grandpybot.wiki_class import Wikipedia

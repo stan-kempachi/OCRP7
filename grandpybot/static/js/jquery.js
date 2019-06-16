@@ -38,6 +38,7 @@ $(function() {
         $('#alert').css( "display", "none" );
         var msg = '<br>' + '<msg>' + "&nbsp;Vous → " + $('#msg_id').val() + '</msg>' + '<br>';
         var request = $('input');
+
         if($('#input_form').val() != ''){
             $('#tchat').append(  msg);
             $('#contain_loader').css( "display", "block" );
