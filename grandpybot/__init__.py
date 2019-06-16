@@ -1,5 +1,6 @@
 #! /usr/bin/env python
+"""
+file init grandpybot module
+"""
 
-from .app import App
-
-
+from .app import APP

@@ -1,4 +1,7 @@
 #! /usr/bin/env python
+"""
+file defining the wikipedia class
+"""
 
 import wikipedia
 
