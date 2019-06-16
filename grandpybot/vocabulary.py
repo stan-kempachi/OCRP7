@@ -4,13 +4,13 @@ WORD_ABOUT_EMPLACEMENT = [
 	'adresse',
 	"l'adresse",
 	'lieu',
-	'se situe',
-	'se trouve',
-	'comment aller',
-	'comment se rendre',
+    'se situe',
+    'se trouve',
+    'comment aller',
+    'comment se rendre',
 	'endroit',
 	"l'endroit",
-	'comment aller',
+    'comment aller',
 	"rue",
 	"localiser",
 	"localisation",
@@ -53,3 +53,4 @@ SENTANCE_PLACE_GRANDPY = [
 	"N'hésite pas à y faire un tour, il se situe ici : ",
 	"C'est un endroit très sympa! N'hésite pas à t'y rendre, c'est là : ",
 ]
+

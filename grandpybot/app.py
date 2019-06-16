@@ -14,30 +14,30 @@ from grandpybot.utils import get_if_error
 from grandpybot.vocabulary import SENTANCE_PLACE_GRANDPY, SENTANCE_DESCRIPTION_GRANDPY
 from grandpybot.wiki_class import Wikipedia
 
-APP = Flask(__name__)
+App = Flask(__name__)
 
 # Config options - Make sure you created a 'config.py' file.
-APP.config.from_object('config')
-APP.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+App.config.from_object('config')
+App.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 
-@APP.context_processor
+@App.context_processor
 def inject_now():
     """return datetime"""
     return dict(now=datetime.now())
 
-@APP.route('/index', methods=['GET', 'POST'])
-@APP.route('/', methods=['GET', 'POST'])
+@App.route('/index', methods=['GET', 'POST'])
+@App.route('/', methods=['GET', 'POST'])
 def home():
     """define homepage"""
     return render_template('pages/home.html', google_key=conf.MAP_API_KEY)
 
-@APP.errorhandler(404)
+@App.errorhandler(404)
 def page_not_found():
     """define error page"""
     return render_template('errors/404.html'), 404
 
-@APP.route('/get_user_request', methods=['GET'])
+@App.route('/get_user_request', methods=['GET'])
 def get_user_request():
     """define get user request methode"""
     if request.method == "GET":
