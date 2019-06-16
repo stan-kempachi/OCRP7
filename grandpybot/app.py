@@ -51,8 +51,8 @@ def get_user_request():
         wiki = Wikipedia()
         description = wiki.get_description_wiki(information)
         wiki_url = wiki.get_wiki_url(information)
-        gmap = Gmaps()
-        emplacement = gmap.geo(search=information)
+        gmaps = Gmaps()
+        emplacement = gmaps.geo(search=information)
         error = get_if_error(type_search)
         if type_search == 'error':
             dict_information = {'type_search': 'error'}
