@@ -7,4 +7,4 @@ PresentationP7.odp
 tests/htmlcov/
 tests/.coverage
 .coverage
-
+htmlcov/

@@ -23,7 +23,7 @@ class Parser ():
         :param sentance:
         :return: dict_request
         """
-        with open('grandpybot/stop_words.json') as json_data:
+        with open('grandpybot/stop_words.json', 'r') as json_data:
             STOP_WORDS = json.load(json_data)
         list_words = sentance.split(' ')
         list_words_for_search = list_words
