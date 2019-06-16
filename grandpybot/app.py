@@ -9,9 +9,10 @@ from flask import Flask, render_template, request, json
 
 import config as conf
 from grandpybot.parser_class import Parser
-from grandpybot.utils import *
-from grandpybot.vocabulary import *
+from grandpybot.utils import get_if_error
+from grandpybot.vocabulary import SENTANCE_DESCRIPTION_GRANDPY, SENTANCE_PLACE_GRANDPY
 from grandpybot.wiki_class import Wikipedia
+from grandpybot.gmaps_class import Gmaps
 
 app = Flask(__name__)
 
@@ -32,7 +33,7 @@ def home():
     return render_template('pages/home.html', google_key=conf.MAP_API_KEY)
 
 @app.errorhandler(404)
-def page_not_found(error):
+def page_not_found():
     """define error page"""
     return render_template('errors/404.html'), 404
 
