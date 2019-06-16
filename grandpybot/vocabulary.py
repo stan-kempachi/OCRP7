@@ -1,16 +1,18 @@
+# pylint: skip-file
+
 WORD_ABOUT_EMPLACEMENT = [
 	'emplacement',
 	"l'emplacement",
 	'adresse',
 	"l'adresse",
 	'lieu',
-    'se situe',
-    'se trouve',
-    'comment aller',
-    'comment se rendre',
+	'se situe',
+	'se trouve',
+	'comment aller',
+	'comment se rendre',
 	'endroit',
 	"l'endroit",
-    'comment aller',
+	'comment aller',
 	"rue",
 	"localiser",
 	"localisation",
