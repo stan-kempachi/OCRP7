@@ -61,4 +61,4 @@ def get_user_request():
         dict_information.update({'sentance_place': random.choice(SENTANCE_PLACE_GRANDPY),
                                  'sentance_description': random.choice(SENTANCE_DESCRIPTION_GRANDPY)})
         dict_information.update(error)
-        return json.dumps(dict_information, indent=2, sort_keys=True)
+        return json.dumps(dict_information)

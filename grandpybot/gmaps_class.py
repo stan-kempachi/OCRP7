@@ -1,8 +1,10 @@
 #! /usr/bin/env python
 
+"""File containing the class that uses the Gmaps API"""
+
 from gmaps import Geocoding
 
-from config import *
+from config import MAP_API_KEY
 
 
 class Gmaps:
