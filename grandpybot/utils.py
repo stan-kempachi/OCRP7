@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-"""File containing function utilised by the app"""
+"""File containing functions utilised by the app"""
 
 from grandpybot.gmaps_class import Gmaps
 from grandpybot.wiki_class import Wikipedia
@@ -22,8 +22,7 @@ def get_type_search(information):
         return 'place'
     elif emplacement and description:
         return 'place description'
-    else:
-        return 'error'
+    return 'error'
 
 
 def get_if_error(type_search):

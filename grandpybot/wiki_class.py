@@ -1,4 +1,6 @@
-#! /usr/bin/env python
+#! /usr/bin/env
+
+"""File containing the class that uses the wikipedia API"""
 
 import wikipedia
 
@@ -19,8 +21,8 @@ class Wikipedia:
         :return:description
         """
         try:
-            srch = wikipedia.search(search, "html.parser")
-            data = wikipedia.page(srch, "html.parser").content
+            sch = wikipedia.search(search, "html.parser")
+            data = wikipedia.page(sch, "html.parser").content
             data = data.split('.')
             description = ''
             for sentance in data[:1]:
