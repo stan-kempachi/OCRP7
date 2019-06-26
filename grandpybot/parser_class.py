@@ -17,8 +17,6 @@ class Parser:
         """constructor"""
         self.sentance = sentance
 
-
-
     def extract_information_request(self, sentance: str):
         """
         Extract good information from search
