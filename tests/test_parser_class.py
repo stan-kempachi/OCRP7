@@ -19,27 +19,17 @@ class Params:
     # sentance 2
     search_1 = "La tour Eiffel please ?"
     extracted_information_1 = 'La tour Eiffel please ?'
-    removed_punctuation_1 = 'La tour Eiffel please  '
-    dict_request_1 = {'information': 'La tour Eiffel  ', 'type_search': 'place description'}
     # sentance 3 : place
     search_2 = '4 rue renard, 94510 La Queue en Brie'
     extracted_information_2 = 'renard, 94510 La Queue en Brie'
-    removed_punctuation_2 = 'renard  94510 La Queue en Brie'
-    dict_request_2 = {'information': 'renard  94510 La Queue en Brie', 'type_search': 'place'}
     # sentance 4 : description
     bleach = "Zaraki Kenpachi"
     bleach_extracted_information = "Zaraki Kenpachi"
-    bleach_removed_punctuation = "Zaraki Kenpachi"
-    bleach_dict_request = {'information': 'Zaraki Kenpachi', 'type_search': 'description'}
     # error requests
     random_search = 'cmFuZG9tIGRhdGEgZm9yIGZha2Ugc2VhcmNo'
-    random_search_dict = \
-        {'information': 'cmFuZG9tIGRhdGEgZm9yIGZha2Ugc2VhcmNo', 'type_search': 'error'}
     punctuation = '-_,;:!()'
     punctuation_removed_punctuation = '        '
-    punctuation_dict_request = {'information': '        ', 'type_search': 'error'}
     empty_search = ' '
-    empty_dict_request = {'information': ' ', 'type_search': 'error'}
 
 
 class TestParser:
