@@ -8,14 +8,12 @@ from grandpybot.wiki_class import Wikipedia
 
 class Params:
     results = {
-        "description": "OpenClassrooms est une école en ligne qui propose à ses membres "
-                       "des cours certifiants et des parcours débouchant sur un métier d'avenir, "
-                       "réalisés en interne, par des écoles, des universités, ou encore par "
-                       "des entreprises partenaires comme Microsoft ou IBM",
+        "description": "OpenClassrooms est un site web de formation en ligne qui propose à ses membres des cours "
+                       "certifiants et des parcours débouchant sur des métiers en croissance.",
         "emplacement": {
-            "adresse": "7 Cit\u00e9 Paradis, 75010 Paris, France",
-            "latitude": 48.8748465,
-            "longitude": 2.3504873
+            "adresse": '10 Quai de la Charente, 75019 Paris, France',
+            "latitude": 48.8975156,
+            "longitude": 2.3833993
         },
         "type_search": "place description",
         "wiki_url": "https://fr.wikipedia.org/wiki/OpenClassrooms"

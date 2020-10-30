@@ -4,6 +4,7 @@
 
 import wikipedia
 
+
 class Wikipedia:
     """
     Class defining the call to the Wikipedia API characterized by:
@@ -21,16 +22,13 @@ class Wikipedia:
         :return:description
         """
         try:
-            sch = wikipedia.search(search, "html.parser")
-            data = wikipedia.page(sch, "html.parser").content
-            data = data.split('.')
-            description = ''
-            for sentance in data[:1]:
-                description = description + sentance
+            description = wikipedia.summary(search, sentences=1)
+            # description = ''
+            # for sentance in data[:1]:
+            #     description = description + sentance
             return description
         except:
             return False
-
 
     def get_wiki_url(self, search):
         """

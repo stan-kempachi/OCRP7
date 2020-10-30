@@ -10,14 +10,12 @@ class Params:
     Class defining the params for Wikipedia()
     """
     description = \
-        "OpenClassrooms est une école en ligne qui propose à ses membres des cours " \
-        "certifiants et des parcours débouchant sur un métier d'avenir, réalisés " \
-        "en interne, par des écoles, des universités, ou encore par des entreprises" \
-        " partenaires comme Microsoft ou IBM"
+        "OpenClassrooms est un site web de formation en ligne qui propose à ses membres des cours certifiants et des " \
+        "parcours débouchant sur des métiers en croissance."
     search = 'Openclassrooms', \
              'La tour Eiffel', \
              'La pyramide du Louvre'
-    len_result_for_search = 255
+    len_result_for_search = len(description)
     search_2 = '4 rue renard, 945100 La Queue en Brie'
     punctuation = '-_,;:!()'
     no_return = False

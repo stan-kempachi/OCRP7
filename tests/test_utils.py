@@ -8,7 +8,7 @@ import grandpybot.utils as utils
 def test_get_type_search():
     """ return type of search : place, description or twice """
     assert utils.get_type_search('Openclassrooms ') == 'place description'
-    assert utils.get_type_search('Obélix') == 'description'
+    assert utils.get_type_search('Obélix') == 'place description'
     assert utils.get_type_search('4 rue renard, 945100 La Queue en Brie') == 'place'
     assert utils.get_type_search(' ') == 'error'
     assert utils.get_type_search('-_,;:!()') == 'error'

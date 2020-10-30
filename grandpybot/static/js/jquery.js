@@ -62,13 +62,12 @@ $(function() {
                         initMap(latitude, longitude, true)
                         $('#tchat').append(display_error("description"));
                     } else if (response_json['type_search'] == 'description') {
-                        $('#tchat').append('<br>' + '<reponse>' + ("&nbsp;Grandpy → " + response_json['sentance_description'] + response_json['description']) + ' ... ' +
-                            '<br>' + "Plus de détails sur wikipedia → " + '<a href="' + (response_json['wiki_url']) + '">' + (response_json['wiki_url']));
+                        $('#tchat').append('<br>' + '<reponse>' + ("&nbsp;Grandpy → " + response_json['sentance_description'] + response_json['description']) +                             '<br>' + "Plus de détails sur wikipedia → " + '<a href="' + (response_json['wiki_url']) + '">' + (response_json['wiki_url']));
                         $('#tchat').append(display_error("place"))
                     } else if (response_json['type_search'] == 'place description') {
                         adresse = response_json['emplacement']['adresse'];
                         $('#tchat').append('<br>' + '<reponse>' + ("&nbsp;Grandpy → " + response_json['sentance_place']) +
-                            '<hr>' + adresse + '<br><hr>' + (response_json['sentance_description'] + response_json['description']) + ' ... ' +
+                            '<hr>' + adresse + '<br><hr>' + (response_json['sentance_description'] + response_json['description']) +
                             '<br>' + "Plus de détails sur wikipedia → " + '<a href="' + (response_json['wiki_url']) + '">' + (response_json['wiki_url']) + '</a>');
                         latitude = response_json['emplacement']['latitude']
                         longitude = response_json['emplacement']['longitude']

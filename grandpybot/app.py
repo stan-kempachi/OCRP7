@@ -26,16 +26,19 @@ def inject_now():
     """return datetime"""
     return dict(now=datetime.now())
 
+
 @app.route('/index', methods=['GET', 'POST'])
 @app.route('/', methods=['GET', 'POST'])
 def home():
     """define homepage"""
     return render_template('pages/home.html', google_key=conf.MAP_API_KEY)
 
+
 @app.errorhandler(404)
 def page_not_found():
     """define error page"""
     return render_template('errors/404.html'), 404
+
 
 @app.route('/get_user_request', methods=['GET'])
 def get_user_request():
@@ -45,7 +48,7 @@ def get_user_request():
         parser = Parser(request_user)
         information_extracted = parser.extract_information_request(request_user)
         information_extracted = parser.remove_punctuation(information_extracted)
-        information_extracted = parser.remove_word_please((information_extracted))
+        information_extracted = parser.remove_word_please(information_extracted)
         type_search = information_extracted['type_search']
         information = information_extracted['information']
         wiki = Wikipedia()
@@ -57,7 +60,8 @@ def get_user_request():
         if type_search == 'error':
             dict_information = {'type_search': 'error'}
         else:
-            dict_information = {'wiki_url': wiki_url, 'emplacement': emplacement, 'description': description, 'type_search': type_search}
+            dict_information = {'wiki_url': wiki_url, 'emplacement': emplacement, 'description': description,
+                                'type_search': type_search}
         dict_information.update({'sentance_place': random.choice(SENTANCE_PLACE_GRANDPY),
                                  'sentance_description': random.choice(SENTANCE_DESCRIPTION_GRANDPY)})
         dict_information.update(error)
